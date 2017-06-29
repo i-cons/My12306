@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--xmlns:xxx 说明XML的命名空间，namespace主要是用来声明在当前的xml文件中可以使用的标签-->
+    <!--xsi:schemaLocation说明当前XML文件中这些可以使用的标签的编写规范-->
+    <context:component-scan base-package="com.hust.team5.controller"/>
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <!--指定处理视图的视图类： JstlView（专门处理jsp+jstl） -->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <!--指定处理视图的前缀：/（当前应用的根目录）  -->
+        <property name="prefix" value="/"></property>
+        <!--指定处理视图的后缀：.jsp（后缀是jsp的文件）  -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>
