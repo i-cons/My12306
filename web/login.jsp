@@ -12,8 +12,11 @@
 </head>
 <body>
 <form action="login.do" method="post">
-    用户名<input type="text" name="username"/><br/>
-    密码<input type="text" name="password"/><br/>
+    用户名<input type="text" name="userEmail"/><br/>
+    密码<input type="text" name="userPassword"/><br/>
+    真实姓名<input type="text" name="userName"/><br/>
+    性别<input type="text" name="userSex"/><br/>
+    身份证号<input type="text" name="userNumber"/><br/>
     手机号<input type="text" name="userPhone"/><br/>
     <input type="submit" value="提交">
 </form>

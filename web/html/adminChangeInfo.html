@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>adminChangeInfo</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css"/>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background-color: #E0E0E0;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<div class="container">
+				<h3 class="text-primary">修改个人信息</h3>
+				<hr />
+				<p class="text-muted">注：标有*处，均为必填项</p>
+				<br />
+				
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th class="col-md-1"></th>
+							<th style="color: #D43F3A; padding-bottom: 13px;">
+								登陆信息
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*登录名</td>
+							<td class="col-md-5">
+								<input type="text" class="form-control" id="username"/>
+							</td>
+							<td>
+								<input type="button" class="form-control col-md-1" id="resetPassword" value="重置密码"/>
+							</td>
+							<td class="col-md-4"></td>
+						</tr>
+
+					</tbody>
+				</table>
+				
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th class="col-md-1"></th>
+							<th style="color: #D43F3A; padding-bottom: 13px;">
+								权限设置
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;用户权限</td>
+							<td class="col-md-2">
+								<select class="form-control" disabled>
+						        	<option>管理员</option>
+						        	<option>普通用户</option>
+						    	</select>
+							</td>
+							<td></td>
+						</tr>
+
+					</tbody>
+				</table>
+				
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th class="col-md-1"></th>
+							<th style="color: #D43F3A; padding-bottom: 13px;">
+								详细信息
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;登录名</td>
+							<td colspan="3">
+								<input type="text" class="form-control" id="realname"/>
+							</td>
+							<td rowspan="3" class="col-md-3" style="padding: 0;">
+								<input type="image" src="../img/photo_mr.jpg" id="image"/>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;真实姓名</td>
+							<td colspan="3" class="col-md-2">
+								<input type="text" class="form-control" id="realname" />
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;性别</td>
+							<td class="col-md-2">
+							    <input type="radio" name="sexRadio" id="male" value="male" class="checkbox-inline"/>男
+							</td>
+							<td></td>
+							<td class="col-md-2">
+							   	<input type="radio" name="sexRadio" id="female" value="female" class="checkbox-inline"/>女
+							</td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*省份</td>
+							<td class="col-md-2">
+								<select name="" id="province" class="form-control">
+									<option value="">省份</option>
+								</select>
+							</td>
+							<td class="col-md-1">&nbsp;市县</td>
+							<td class="col-md-2">
+								<select name="" id="city" class="form-control">
+									<option value="">市县</option>
+								</select>
+							</td>
+							<td class="col-md-2">
+								<input type="file" value="浏览" id="openFile"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*证件类型</td>
+							<td colspan="3">
+								<select class="form-control">
+						        	<option>二代身份证</option>
+						        	<option>港澳台证</option>
+						    	</select>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*证件号码</td>
+							<td colspan="3">
+								<input type="text" class="form-control" id="idnumber"/>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*出生日期</td>
+							<td colspan="3">
+								<input type="date" class="form-control" id="birthdate"/>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;&nbsp;旅客类型</td>
+							<td colspan="2" class="col-md-3">
+								<select class="form-control">
+						        	<option>成人</option>
+						        	<option>学生</option>
+						        	<option>军人</option>
+						    	</select>
+							</td>
+							<td colspan="2" ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;&nbsp;备注</td>
+							<td colspan="3">
+								<textarea class="form-control" rows="5"></textarea>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1"></td>
+							<td class="col-md-2">
+								<button type="button" class="btn btn-info">提交</button>
+							</td>
+							<td></td>
+							<td class="col-md-2">
+								<button type="button" class="btn btn-warning">重置</button>
+							</td>
+							<td ></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.js"></script>
+		<script>
+			var oProvince = document.getElementById("province");
+			var oCity = document.getElementById("city");
+			var ogetImage=document.getElementById("openFile");
+			var oImage=document.getElementById("image");
+			var provinces = new Array(); //创建了一个空数组
+			provinces[0] = "省份";
+			provinces[1] = "黑龙江省";
+			provinces[2] = "吉林省";
+			provinces[3] = "辽宁省";
+			for(var i=0;i<provinces.length;i++){
+				oProvince.options[i]=new Option(provinces[i]); 
+			}
+			
+			//模拟二维数组
+			var cities = new Array(); //定义一个空的数组
+			cities[0] = new Array();
+			cities[0][0] = "市县";
+			
+			//黑龙江省
+			cities[1] = new Array();
+			cities[1][0] = "哈尔滨市";
+			cities[1][1] = "齐齐哈尔市";
+			cities[1][2] = "大庆市";
+			
+			//吉林省
+			cities[2] = new Array();
+			cities[2][0] = "长春市";
+			cities[2][1] = "通化市";
+			cities[2][2] = "吉林市";
+			cities[2][3] = "梅河口市";
+			
+			//辽宁省
+			cities[3] = new Array();
+			cities[3][0] = "沈阳市";
+			cities[3][1] = "大连市";
+			cities[3][2] = "鞍山市";
+			cities[3][3] = "本溪市";
+			
+		
+			oProvince.onchange = function(){
+				var index = oProvince.selectedIndex;
+				oCity.length = 0;
+				for(var i=0;i<cities[index].length;i++){
+					oCity.options[i]=new Option(cities[index][i]); 
+				}
+			}	
+			function change(){
+				oImage.src=ogetImage.value;
+			}
+		</script>
+	</body>
+</html>

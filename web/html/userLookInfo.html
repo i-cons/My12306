@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>userLookInfo</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css"/>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background-color: #E0E0E0;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<div class="container">
+				<h3 class="text-primary">修改个人信息</h3>
+				<hr />
+				<p class="text-muted">注：标有*处，均为必填项</p>
+				<br />
+				
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th class="col-md-1"></th>
+							<th style="color: #D43F3A; padding-bottom: 13px;">
+								详细信息
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;登录名</td>
+							<td colspan="3">
+								<input type="text" class="form-control" id="realname" disabled/>
+							</td>
+							<td rowspan="3" class="col-md-3" style="padding: 0;">
+								<input type="image" src="../img/photo_mr.jpg" id="image"/>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;真实姓名</td>
+							<td colspan="3" class="col-md-2">
+								<input type="text" class="form-control" id="realname" disabled/>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;性别</td>
+							<td class="col-md-2">
+							    <input type="radio" name="sexRadio" id="male" value="male" class="checkbox-inline" disabled/>男
+							</td>
+							<td></td>
+							<td class="col-md-2">
+							   	<input type="radio" name="sexRadio" id="female" value="female" class="checkbox-inline" disabled/>女
+							</td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*省份</td>
+							<td class="col-md-2">
+								<select name="" id="province" class="form-control" disabled>
+									<option value="">省份</option>
+								</select>
+							</td>
+							<td class="col-md-1">&nbsp;市县</td>
+							<td class="col-md-2">
+								<select name="" id="city" class="form-control" disabled>
+									<option value="">市县</option>
+								</select>
+							</td>
+							<td class="col-md-2">
+							</td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*证件类型</td>
+							<td colspan="3">
+								<select class="form-control" disabled>
+						        	<option>二代身份证</option>
+						        	<option>港澳台证</option>
+						    	</select>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*证件号码</td>
+							<td colspan="3">
+								<input type="text" class="form-control" id="idnumber" disabled/>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;*出生日期</td>
+							<td colspan="3">
+								<input type="date" class="form-control" id="birthdate" disabled/>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;&nbsp;旅客类型</td>
+							<td colspan="2" class="col-md-3">
+								<select class="form-control" disabled>
+						        	<option>成人</option>
+						        	<option>学生</option>
+						        	<option>军人</option>
+						    	</select>
+							</td>
+							<td colspan="2" ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;&nbsp;&nbsp;备注</td>
+							<td colspan="3">
+								<textarea class="form-control" rows="5" disabled></textarea>
+							</td>
+							<td ></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1"></td>
+							<td class="col-md-2">
+							</td>
+							<td></td>
+							<td class="col-md-2">
+								<button type="button" class="btn btn-warning"><a href="userChangeInfo.html" target="content">修改</a></button>
+							</td>
+							<td ></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</body>
+</html>
