@@ -21,6 +21,7 @@
 				<hr />
 				<p class="text-muted">注：标有*处，均为必填项</p>
 				<br />
+				<form action="../login.do" method="post" onsubmit="return validate()" id="userInfoForm">
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -33,25 +34,25 @@
 					<tbody>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*登录名</td>
+							<td class="col-md-1">&nbsp;*邮箱</td>
 							<td class="col-md-5">
-								<input type="text" class="form-control" id="username"/>
+								<input type="text" class="form-control" id="userEmail" name="userEmail"/>
 							</td>
-							<td>由数字、字母或"_"组成，长度不少于6位，不多于30位</td>
+							<td>输入邮箱</td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*密码</td>
+							<td class="col-md-1">&nbsp;*密码</td>
 							<td class="col-md-5">
-								<input type="password" class="form-control" id="password"/>
+								<input type="password" class="form-control" id="userPassword" name="userPassword"/>
 							</td>
 							<td>不少于6位字符</td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*确认密码</td>
+							<td class="col-md-1">&nbsp;*确认密码</td>
 							<td class="col-md-5">
-								<input type="password" class="form-control col-md-5" id="password"/>
+								<input type="password" class="form-control col-md-5" id="configPassword" name="configPassword"/>
 							</td>
 							<td>请再次输入密码</td>
 						</tr>
@@ -70,35 +71,43 @@
 					<tbody>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*真实姓名</td>
+							<td class="col-md-1">&nbsp;*真实姓名</td>
 							<td colspan="3">
-								<input type="text" class="form-control" id="realname"/>
+								<input type="text" class="form-control" id="userName" name="userName"/>
 							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*性别</td>
+							<td class="col-md-1">&nbsp;*手机号</td>
+							<td colspan="3">
+								<input type="text" class="form-control" id="userPhone" name="userPhone"/>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="col-md-1"></td>
+							<td class="col-md-1">&nbsp;*性别</td>
 							<td class="col-md-2">
-							    <input type="radio" name="sexRadio" id="male" value="male" class="checkbox-inline"/>男
+							    <input type="radio" name="userSex" id="male" value="male" class="checkbox-inline" checked/>男
 							</td>
 							<td></td>
 							<td class="col-md-2">
-							   	<input type="radio" name="sexRadio" id="female" value="female" class="checkbox-inline"/>女
+							   	<input type="radio" name="userSex" id="female" value="female" class="checkbox-inline"/>女
 							</td>
 							<td ></td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*省份</td>
+							<td class="col-md-1">&nbsp;*省份</td>
 							<td class="col-md-2">
-								<select name="" id="province" class="form-control">
+								<select name="userProvince" id="userProvince" class="form-control">
 									<option value="">省份</option>
 								</select>
 							</td>
 							<td class="col-md-1">&nbsp;市县</td>
 							<td class="col-md-2">
-								<select name="" id="city" class="form-control">
+								<select name="userCity" id="userCity" class="form-control">
 									<option value="">市县</option>
 								</select>
 							</td>
@@ -106,9 +115,9 @@
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*证件类型</td>
+							<td class="col-md-1">&nbsp;*证件类型</td>
 							<td colspan="3">
-								<select class="form-control">
+								<select class="form-control" id="userNumberType" name="userNumberType">
 						        	<option>二代身份证</option>
 						        	<option>港澳台证</option>
 						    	</select>
@@ -117,37 +126,38 @@
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*证件号码</td>
+							<td class="col-md-1">&nbsp;*证件号码</td>
 							<td colspan="3">
-								<input type="text" class="form-control" id="idnumber"/>
+								<input type="text" class="form-control" id="userNumber" name="userNumber"/>
 							</td>
 							<td ></td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;*出生日期</td>
+							<td class="col-md-1">&nbsp;*出生日期</td>
 							<td colspan="3">
-								<input type="date" class="form-control" id="birthdate"/>
+								<input type="date" class="form-control" id="userBirthday" name="userBirthday"/>
 							</td>
 							<td ></td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;&nbsp;旅客类型</td>
+							<td class="col-md-1">&nbsp;旅客类型</td>
 							<td colspan="2" class="col-md-3">
-								<select class="form-control">
-						        	<option>成人</option>
-						        	<option>学生</option>
-						        	<option>军人</option>
+								<select class="form-control" id="userType" name="userType">
+						        	<option value="man">成人</option>
+									<option value="child">儿童</option>
+						        	<option value="student">学生</option>
+						        	<option value="solider">军人</option>
 						    	</select>
 							</td>
 							<td colspan="2" ></td>
 						</tr>
 						<tr>
 							<td class="col-md-1"></td>
-							<td class="col-md-1">&nbsp;&nbsp;&nbsp;备注</td>
+							<td class="col-md-1">&nbsp;备注</td>
 							<td colspan="3">
-								<textarea class="form-control" rows="5"></textarea>
+								<textarea class="form-control" rows="5" id="userRemark" name="userRemark"></textarea>
 							</td>
 							<td ></td>
 						</tr>
@@ -155,7 +165,7 @@
 							<td class="col-md-1"></td>
 							<td class="col-md-1"></td>
 							<td colspan="3">
-								<input type="checkbox"/>我已阅读并同意遵守
+								<input type="checkbox" id="protocol"/>我已阅读并同意遵守
 								<a href="#">《中国铁路客户服务中心网站服务条款》</a>
 							</td>
 							<td ></td>
@@ -164,23 +174,24 @@
 							<td class="col-md-1"></td>
 							<td class="col-md-1"></td>
 							<td class="col-md-2">
-								<button type="button" class="btn btn-info">提交</button>
+								<button type="button" class="btn btn-info" id="submitButton">提交</button>
 							</td>
 							<td></td>
 							<td class="col-md-2">
 								<button type="button" class="btn btn-warning">重置</button>
 							</td>
-							<td ></td>
+							<td></td>
 						</tr>
 					</tbody>
 				</table>
+				</form>
 			</div>
 		</div>
 		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="../js/bootstrap.js"></script>
 		<script>
-			var oProvince = document.getElementById("province");
-			var oCity = document.getElementById("city");
+			var oProvince = document.getElementById("userProvince");
+			var oCity = document.getElementById("userCity");
 			var provinces = new Array(); //创建了一个空数组
 			provinces[0] = "省份";
 			provinces[1] = "黑龙江省";
@@ -222,7 +233,131 @@
 				for(var i=0;i<cities[index].length;i++){
 					oCity.options[i]=new Option(cities[index][i]); 
 				}
-			}	
+			}
+
+            function validate() {
+                if(document.getElementById("userEmail").value.length==0){
+                    alert("邮箱不能为空！");
+                    return false;
+                }
+
+                if(!RegExp(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/).test(document.getElementById("userEmail").value)){
+                    alert("邮箱格式不正确！");
+                    return false;
+                }
+                var password = document.getElementById("userPassword").value;
+                var configPassword = document.getElementById("configPassword").value;
+                if(password.length==0){
+                    alert("密码不能为空！");
+                    return false;
+                }
+                if(password.length<6){
+                    alert("密码太短！");
+                    return false;
+                }
+
+                if(configPassword.length==0){
+                    alert("确认密码不能为空！");
+                    return false;
+                }
+                if(password!=configPassword){
+                    alert("两次密码不一致");
+                    document.getElementById("configPassword").value = "";
+                    return false;
+                }
+
+                if(!RegExp(/^[\u4e00-\u9fa5]{1,10}$|^[a-zA-Z]{1,30}$/).test(document.getElementById("userName").value)){
+                    alert("姓名格式错误！");
+                    return false;
+                }
+
+                if(!RegExp(/^1[34578]\d{9}$/).test(document.getElementById("userPhone").value)){
+                    alert("手机号码格式不正确！");
+                    return false;
+                }
+
+                if(document.getElementById("userProvince").value=="省份"||document.getElementById("userCity").value=="市县"){
+                    alert("省市不能为空！");
+                    return false;
+                }
+
+                if(document.getElementById("userNumber").value.length==0){
+                    alert("证件号码不能为空！");
+                    return false;
+                }
+
+                switch (document.getElementById("userNumberType").selectedIndex){
+                    case 0:
+                        if(!RegExp(/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([012]\d)|3[0-1])\d{4}$/).test(document.getElementById("userNumber").value)){
+                            alert("身份证格式不正确！");
+                            return false;
+                        }
+                        break;
+                    case 1:
+                        if(!RegExp(/(^[a-zA-Z]{5,17}$)|(^[a-zA-Z0-9]{5,17}$)/).test(document.getElementById("userNumber").value)){
+                            alert("护照格式不正确！");
+                            return false;
+                        }
+                        break;
+                    case 2:
+                        if(!RegExp(/^[HMhm]{1}([0-9]{10}|[0-9]{8})$/).test(document.getElementById("userNumber").value)){
+                            alert("港澳通行证格式不正确！");
+                            return false;
+                        }
+                        break;
+                    case 3:
+                        if(!RegExp(/(^[0-9]{8}$)|(^[0-9]{10}$)/).test(document.getElementById("userNumber").value)){
+                            alert("台湾通行证格式不正确！");
+                            return false;
+                        }
+                        break;
+
+                }
+
+                if(document.getElementById("userBirthday").value.length==0){
+                    alert("出生日期不能为空！");
+                    return false;
+                }
+                var birtydayTest = /^(^(\d{4}|\d{2})(\-|\/|\.)\d{1,2}\3\d{1,2}$)|(^\d{4}年\d{1,2}月\d{1,2}日$)$/;
+                if(!RegExp(birtydayTest).test(document.getElementById("userBirthday").value)){
+                    alert("出生日期格式错误！");
+                    return false;
+                }
+                if(document.getElementById("protocol").checked)
+                    return true;
+                else{
+                    alert("请阅读协议");
+                    return false;
+                }
+            }
+
+            document.getElementById("userNumberType").onchange = function() {
+                document.getElementById("userNumber").value = "";
+            }
+
+
+            $("#submitButton").click(function () {
+                if(!validate())return false;
+                $.ajax({
+                    url: "../register.do",
+                    data: $("#userInfoForm").serialize(),
+                    type: 'post',
+                    cache: false,
+					async: false,
+//                    dataType: 'json',
+                    success: function (data) {
+                        if(data=="success") {
+                            alert("注册成功");
+                            window.parent.location.href = "login.html";
+                        } else{
+                            alert("邮箱已注册");
+						}
+                    },
+                    error: function (data) {
+                        alert("异常！");
+                    }
+                });
+            });
 		</script>
 	</body>
 </html>

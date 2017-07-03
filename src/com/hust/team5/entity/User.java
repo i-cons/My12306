@@ -7,23 +7,77 @@ public class User {
     private String userName;
     private String userSex;
     private String userNumber;
+    private String userNumberType;
     private String userPhone;
+    private String userProvince;
+    private String userCity;
+    private String userBirthday;
     private String userLastLogin;
     private String userState;
     private String userType;
+    private String userRemark;
 
     public User(String userEmail, String userPassword,
                 String userName, String userSex,
-                String userNumber, String userPhone) {
+                String userNumber, String userNumberType,
+                String userPhone, String userProvince,
+                String userCity, String userBirthday,
+                String userType, String userRemark) {
         this.userEmail = userEmail;
         this.userPassword = userPassword;
         this.userName = userName;
         this.userSex = userSex;
         this.userNumber = userNumber;
+        this.userNumberType = userNumberType;
         this.userPhone = userPhone;
+        this.userProvince = userProvince;
+        this.userCity = userCity;
+        this.userBirthday = userBirthday;
+        this.userType = userType;
+        this.userRemark = userRemark;
     }
 
     public User(){}
+
+    public String getUserNumberType() {
+        return userNumberType;
+    }
+
+    public void setUserNumberType(String userNumberType) {
+        this.userNumberType = userNumberType;
+    }
+
+    public String getUserProvince() {
+        return userProvince;
+    }
+
+    public void setUserProvince(String userProvince) {
+        this.userProvince = userProvince;
+    }
+
+    public String getUserCity() {
+        return userCity;
+    }
+
+    public void setUserCity(String userCity) {
+        this.userCity = userCity;
+    }
+
+    public String getUserBirthday() {
+        return userBirthday;
+    }
+
+    public void setUserBirthday(String userBirthday) {
+        this.userBirthday = userBirthday;
+    }
+
+    public String getUserRemark() {
+        return userRemark;
+    }
+
+    public void setUserRemark(String userRemark) {
+        this.userRemark = userRemark;
+    }
 
     public String getUserEmail() {
         return userEmail;

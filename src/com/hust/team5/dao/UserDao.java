@@ -12,8 +12,18 @@ public class UserDao {
     @Autowired
     private SqlSession sqlSession;
 
-    public void insertUser(User user){
+    public void registerUser(User user){
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        userMapper.insertUser1(user);
+        userMapper.registerUser(user);
+    }
+
+    public User validateUser(String userEmail){
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        return userMapper.validateUser(userEmail);
+    }
+
+    public User validateUserPassword(User user){
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        return userMapper.validateUserPassword(user);
     }
 }
